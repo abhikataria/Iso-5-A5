@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="signup.css">
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
+</head>
+
+
+
+
+
+<body>
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form method="get" action="output3.html"  onsubmit="return valid()">
+			<h1 class="heading">Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      
+      <span>or use your email for registration</span>
+ <br/>
+     
+      <!-- <select id="year" style="  background-color: #eee;
+      border: none;
+      padding: 12px 15px;
+      margin: 8px 0;
+      width: 100%;">
+        <option style="font-weight: bold;" >SIGNUP AS A</option>
+        <option id="far" >FARMER</option>
+        <option id="sup" >SUPPLIER</option>
+        <option id="cus" >CUSTOMER</option>
+    </select> -->
+
+		
+			<input id = "name" type="text" name="name" placeholder="Name" />
+			<input type="number" id="phone" name="contact" placeholder="Contact Number" pattern="[0-9]{10}" required>
+			
+			<input type="email" name="email" placeholder="Email" />
+			<input id="ip" type="password" name="password" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+			<input id="nip" type="password" placeholder="Confirm Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+			
+			<button type="submit">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container" method="post">
+		<form method="get" action="output2.html"  onsubmit="return valid()">
+			<h1 class="heading">Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="number" id="contact" name="contact" placeholder="Contact Number" pattern="[0-9]{10}" required />
+			<input name="password" id="password" type="password" placeholder="Password"  required  />
+			<a href="#">Forgot your password?</a>
+			<button  id="login">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1 class="heading">Welcome Back!</h1>
+				<p class= "para1">To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1 class="heading">Hello, Farmers!</h1>
+				<p class= "para1">Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp"  >Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+	  $("#login").click(function(){
+	  	console.log("aya");
+	    $.post("http://d5ee4a00.ngrok.io/user/login/",
+	    {
+	      contact: contact,
+	      password: password,
+	    },
+	    function(data,status){
+	    	if(status==200)
+	    	{
+	    		alert("success");
+
+	    	}
+	    	if(status==404)
+	    	{
+	    		alert("Invalid credentials");
+	    	}
+
+	    	if(status==500)
+	    	{
+	    		alert("Network issue");
+	    	}
+	    });
+	  });
+	});
+</script>
+
+<!-- 
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+            <script>
+            		function login()
+            		{
+
+
+	            			var x=document.getElementById('phone');
+	            			var y=document.getElementById('password');
+	            			$.post("http://aaa40af3.ngrok.io/user/login/",{contact:x,password:y})
+	            			.done(function(data){
+	            				console.log(data);
+	             		      alert("Data loaded" + data);
+	            			})
+
+            		}
+            	</script>
+ -->
+            
+
+<script src="signup.js"></script>
+</body>
+</html>

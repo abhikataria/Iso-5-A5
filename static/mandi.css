@@ -1,0 +1,78 @@
+
+.btn{
+  border-radius: 20px;
+  border: 1px solid #FF4B2B;
+  background-color: #71c55d;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+h1{
+    font-size: 30px;
+    color: #7F8C8D;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  table{
+    width:100%;
+    table-layout: fixed;
+    
+  }
+  .tbl-header{
+    background-color: rgba(255,255,255,0.3);
+   }
+  .tbl-content{
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    font-size: 16px;
+    z-index: 9999;
+    width: 100%;
+  
+    
+  }
+  td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1B2631;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  }
+  
+  
+  /* demo styles */
+  
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  body{
+  
+    font-family: 'Roboto', sans-serif;color: black;
+  }
+  section{
+    margin: 50px;
+  }
+  
+
+  /* for custom scrollbar for webkit browser*/
+ tr td{
+    border-bottom:1px solid black;
+  }
+  th{
+    border-bottom:1px solid black;
+  }

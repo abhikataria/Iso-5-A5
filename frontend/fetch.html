@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>JSON Application</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<style>
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Calibri", sans-serif;}
+</style>
+</head>
+<body>
+	<h1></h1>
+	<a href="del.html"><h1>For Deleting Id</h1></a>
+	<a href="update.html"><h1>For Updating Id</h1></a>
+ <h1 class="w3-wide w3-center w3-sixe-80 w3-padding w3-yellow">Informtion  Of Database</h1>
+ <div class="w3-container-40 w3-center w3-content w3-blue" style="max-width:800px">
+ <div class="w3-row-padding-20 w3-padding-80" style="margin:0-16px">
+
+	 <script>
+    $.ajax({url: "http://aaa40af3.ngrok.io/farmer/list/", success: function(result){
+	console.log(result);
+	for(var i=0;i<result.length;i++)
+	{
+	var datum = result[i];
+	document.querySelector('body').innerHTML += `
+    	<div class="w3-quarter w3-margin-bottom-60 w3-padding">
+    	
+          	<div class="w3-display-container w3-card-4 w3-orange" style="height:300px;width:300px">
+          	
+          	<div class="w3-padding">Land Available: ${result[i].op_land_area}</div>
+		   <div class="w3-padding">Street: ${result[i].address1}</div>
+		   <div class="w3-padding">city: ${result[i].city}</div>
+		   <div class="w3-padding">state: ${result[i].state}</div>
+		   <div class="w3-padding">pincode: ${result[i].pincode}</div>
+		 </div>
+	  </div>
+ </div>
+	`
+	}
+	}}
+	)
+</script>
+</body>
+</html>

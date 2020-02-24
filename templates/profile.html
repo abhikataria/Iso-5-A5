@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <br>
+  <br>
+  <title>FarmFella</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+   <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(93019)</script> 
+
+  <!-- Favicons -->
+  <img src="{{ url_for('static', filename='msc/index/favicon.png') }}" alt="Logo">
+  <img src="{{ url_for('static', filename='msc/index/apple-touch-icon.png') }}" rel="apple-touch-icon" alt="Logo">
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Bootstrap css -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link href="{{ url_for('static', filename='css/index/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+ <!--  <link href="css/index/owl.carousel.min.css" rel="stylesheet">
+  <link href="css/index/owl.theme.default.min.css" rel="stylesheet">
+  <link href="css/index/font-awesome.min.css" rel="stylesheet">
+  <link href="css/index/animate.min.css" rel="stylesheet">
+  <link href="css/index/modal-video.min.css" rel="stylesheet"> -->
+
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/index/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: eStartup
+    Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <header id="header" class="header header-hide">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="/"><img src="{{ url_for('static', filename='msc/index/FarmFella Logo.png') }}" height="80" width="80">&nbsp;&nbsp;<span style="color: green">Farm</span><span style="color: #6fec5d">Fella</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a> -->
+      </div>
+
+      <nav id="nav-menu-container" style="margin-top: 20px; margin-bottom: 20px; height: 20px;" >
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/profile">My Profile</a></li>
+          <li><a href="/retailer">Retailer</a></li>
+          <li><a href="/supplier">Supplier</a></li>
+          <li><a href="/mandi">Live Mandi Price</a></li>
+           <li><a href="/weatherinfo/weather">Weather</a></li>
+          <li><a href="/faq">Faqs</a></li>
+
+          <li><a href="/soil">Soil Testing Labs</a></li>
+
+          <li class="menu-has-children"><a href="">language</a>
+            <ul>
+              <li><a href="#">Hindi</a></li>
+              <li><a href="#">Urdu</a></li> 
+              <li><a href="#">Odia</a></li>
+              <li><a href="#">Telgu</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-sm-10"><h1>{{current_user.username}}</h1></div>
+      <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3"><!--left col-->
+              
+
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block file-upload">
+      </div></hr><br>
+
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+          </div>
+          
+          
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul> 
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+              <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            </div>
+          </div>
+          
+        </div><!--/col-3-->
+      <div class="col-sm-9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Basic</a></li>
+                <li><a data-toggle="tab" href="#tabf">Farmer</a></li>
+                <li><a data-toggle="tab" href="#tabr">Retailer</a></li>
+              </ul>
+
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder={{current_user.username}} title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Contact</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder={{current_user.contact}} title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>State</h4></label>
+                              <input type="text" class="form-control" name="state" id="phone" placeholder="enter state" title="enter your state.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>City</h4></label>
+                              <input type="text" class="form-control" name="city" id="mobile" placeholder="enter city" title="enter your city.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder={{current_user.email}} title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>PINCODE</h4></label>
+                              <input type="number" class="form-control" id="pincode" placeholder="474001" title="enter a pincode">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+                </form>
+              
+              <hr>
+              
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="tabf">
+               
+               <h2></h2>
+               
+               <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Profession</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Addhar Number</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Crop</h4></label>
+                              <input type="text" class="form-control" name="phone" id="crop" placeholder="enter crop" title="enter your crop details.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Growth</h4></label>
+                              <input type="text" class="form-control" name="growth" id="growth" placeholder="enter growth per annum" title="enter your growth per annum.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+                </form>
+               
+             </div><!--/tab-pane-->
+
+             <div class="tab-pane" id="tabr">
+               
+               <h2></h2>
+               
+               <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Shop Location</h4></label>
+                              <input type="text" class="form-control" name="shop_location" id="shop_location" placeholder="Location" title="enter your shop location.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Addhar Number</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Income</h4></label>
+                              <input type="number" class="form-control" name="income" id="crop" placeholder="enter income" title="enter your income details.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Category</h4></label>
+                              <input type="text" class="form-control" name="growth" id="category" placeholder="enter category" title="enter your shop category.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+                </form>
+               
+             </div>
+              
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+                                                      
+  <!--==========================
+    Footer
+  ============================-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#"><span style="color: green">Farm</span><span style="color: #6fec5d">Fella</span></a>
+            <p>If you have any disputes or hints, please fill in the details below, and we will get in touch with you very soon.</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4></h4>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Top Touches</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">Climate Anticipation</a></li>
+              <li><a href="#">Communication Support</a></li>
+              <li><a href="#">Chatter-Bot</a></li>
+              <li><a href="#">SMS Service</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Support</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">faq</a></li>
+              <li><a href="#">Editor help</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights FarmFella. All rights reserved.</p>
+        <div class="credits">
+         
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+  <script src="{{ url_for('static', filename='js/profile/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/jquery-migrate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/hoverIntent.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/superfish.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/index/modal-video.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/contactform.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/jquery.min.js') }}"></script>
+  <!-- Template Main Javascript File -->
+
+</body>
+</html>

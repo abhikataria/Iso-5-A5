@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+        CONTACT PAGE
+    </title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body class="con">
+    <div class="log"style="border:3px solid white;height: auto;border-radius: 10px;font-size: 10px;" >
+        <h1>Hello !! Put Your Info for farmer profile</h1>
+        <form   method="post" action="farmeroutput.html" style="padding: 20px;"  >
+            <input class="inp"  type="text" id="myInput" name="op_land_area" placeholder="LAND AREA" required="required" />
+            <input class="inp" type="date" name="dob" placeholder="DATE OF BIRTH" required="required" />
+            <input class="inp" type="text" name="address1" placeholder="Street , VILLAGE" required="required" />
+            <input class="inp" type="text" name="address2" placeholder="DISTRICT" required="required" />
+             <input class="inp" type="text" name="city" placeholder="CITY" required="required" />
+              <input class="inp" type="text" name="state" placeholder="STATE" required="required" />
+             
+               <input class="inp" type="number" maxlength="6" name="pincode" placeholder="PIN CODE" required="required" />
+
+            <button type="submit" >Let me in.</button>
+        </form>
+         <p id="demo" ></p>
+    </div>
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+
+  document.getElementById("lati").value=position.coords.latitude;
+   document.getElementById("longi").value=position.coords.longitude;
+
+console.log("hey");
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hey</title>
+
+        <meta charset="utf-8">
+         <meta name="viewport" content="initial-scale=1">
+          <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+                  <style>
+                .h1{
+                    text-shadow: 2px 2px 5px red;
+                }
+                .body{
+                  background-color:#46a09f;
+                }
+          </style>    
+</head>
+<body>
+           
+
+                <div class="log"style="border:3px solid white;height: auto;border-radius: 10px;font-size: 10px;" >
+        <h1>Hello !! Fill the detail to update your profile</h1>
+        <form    style="padding: 20px;"  >
+            <input class="inp"  type="text" id="myInput" name="op_land_area" placeholder="LAND AREA" required="required" />
+            <input class="inp" type="text" name="address1" placeholder="Street , VILLAGE" required="required" />
+            <input class="inp" type="text" name="address2" placeholder="DISTRICT" required="required" />
+             <input class="inp" type="text" name="city" placeholder="CITY" required="required" />
+              <input class="inp" type="text" name="state" placeholder="STATE" required="required" />
+             
+               <input class="inp" type="number" maxlength="6" name="pincode" placeholder="PIN CODE" required="required" />
+
+            <button type="submit" >Let me in.</button>
+        </form>
+
+
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script type="text/javascript">
+            function getParams(){
+                var idx = document.URL.indexOf('?');
+                var params = new Array();
+                if (idx != -1) {
+                    var pairs = document.URL.substring(idx+1,document.URL.length).split('&');
+                    for (var i=0; i<pairs.length; i++){
+                        nameVal = pairs[i].split('=');
+                        params[nameVal[0]] = nameVal[1];
+                    }
+                }
+                return params;
+            }
+
+            contact=localStorage.getItem("lastname");
+            params = getParams();
+            op_land_area=unescape(params["op_land_area"]);
+            address1=unescape(params["address1"]);
+            address2=unescape(params["address2"]);
+            city=unescape(params["city"]);
+            state=unescape(params["state"]);
+            pincode=unescape(params["pincode"]);
+
+			var arr = {op_land_area:op_land_area,pincode:pincode,address1:address1,address2:address2,city:city,state:state};
+    $.ajax({
+        url: 'http://d5ee4a00.ngrok.io/farmer/',
+        type: 'PUT',
+        data: JSON.stringify(arr),
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        headers:{
+          "auth-token": contact
+        }
+        async: true,
+        success: function(msg) {
+            alert("updated");
+
+                window.location.href = "home.html";
+                console.log("success");
+        },
+		
+				    error: function (jqXHR, exception) {
+                        var msg = '';
+                          if (jqXHR.status === 0) {
+                              msg = 'Not connect.\n Verify Network.';
+                          } else if (jqXHR.status == 404) {
+                              msg = 'Requested page not found. [404]';
+                          } else if (jqXHR.status == 500) {
+                              msg = 'Entered values must be unique for the user  |  Internal Server Error [500].';
+                          } else if (exception === 'parsererror') {
+                              msg = 'Requested JSON parse failed.';
+                          } else if (exception === 'timeout') {
+                              msg = 'Time out error.';
+                          } else if (exception === 'abort') {
+                              msg = 'Ajax request aborted.';
+                          } else {
+                              msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                          }
+                          alert(msg);
+                          window.location.href = "farmerupdate.html";
+                }
+				});
+	</script>
+
+</body>
+</html>

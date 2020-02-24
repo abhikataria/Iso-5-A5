@@ -1,0 +1,21 @@
+button {
+	outline: none !important;
+	border: none;
+	background: #71c55d;
+}
+
+button:hover {
+	cursor: pointer;
+  border-color: #71c55d;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+	 color: orange;
+}

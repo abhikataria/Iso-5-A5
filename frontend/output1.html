@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>outputs</title>
+          <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <link rel="stylesheet" type="text/css" href="task1.css">
+  <link rel="stylesheet" type="text/css" href="particlecss.css">
+        <style>
+        .h1{
+            text-shadow: 2px 2px 5px red;
+        }
+        </style>
+    </head>
+    <body >
+
+  <center>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function getParams(){
+                var idx = document.URL.indexOf('?');
+                var params = new Array();
+                if (idx != -1) {
+                    var pairs = document.URL.substring(idx+1,document.URL.length).split('&');
+                    for (var i=0; i<pairs.length; i++){
+                        nameVal = pairs[i].split('=');
+                        params[nameVal[0]] = nameVal[1];
+                    }
+                }
+                return params;
+            }
+            params = getParams();
+            Password=unescape(params["password"]);
+            Contact= unescape(params["contact"]);
+            var arr = {contact:Contact,password:Password};
+            $.ajax({
+            url: 'http://d5ee4a00.ngrok.io/user/login/',
+            type: 'POST',
+            data: JSON.stringify(arr),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            async: true,
+            success: function(msg) {
+                window.location.href = "home.html";
+            },
+             error: function (jqXHR, exception)
+                                                             {
+                                                                        var msg = '';
+                                                                          if (jqXHR.status === 0) {
+                                                                              msg = 'Not connect.\n Verify Network.';
+                                                                          } else if (jqXHR.status == 404) {
+                                                                              msg = 'Requested page not found. [404]';
+                                                                          } else if (jqXHR.status == 500) {
+                                                                              msg = 'Entered values must be unique for the user  |  Internal Server Error [500].';
+                                                                          } else if (exception === 'parsererror') {
+                                                                              msg = 'Requested JSON parse failed.';
+                                                                          } else if (exception === 'timeout') {
+                                                                              msg = 'Time out error.';
+                                                                          } else if (exception === 'abort') {
+                                                                              msg = 'Ajax request aborted.';
+                                                                          } else {
+                                                                              msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                                                                          }
+                                                                          window.location.href = "signupget.html";
+                                                                }
+                                                        
+                                                            
+        });
+        </script>
+
+        <script type="text/javascript" src="particles.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="particles.js"></script>
+        </center>
+    </body>
+</html>

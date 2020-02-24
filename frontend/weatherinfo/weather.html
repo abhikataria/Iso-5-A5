@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Weather Now</title>
+	<meta charset="utf-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" href="Resources/thunder.svg" />
+
+	<script type="text/javascript" src="JS/script.js"></script>
+	<link rel="stylesheet" type="text/css"  href="CSS/style.css">
+
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body onload="getLocation();">
+	
+	<div class="bg-img img-responsive">
+	<div class="Container" id="parse1">
+		<div class="row"><div class="col-md-12 col-sm-6"> <input  style="visibility: collapse;" type="text" name="city" id="city" placeholder="Enter City Name" class="form-control"> </div></div>
+		<div class="row"><div class="col-md-12 col-sm-6"> <button style="visibility: collapse;" name="getWeather" id="getWeather" onclick="parseJson()" class="btn btn-primary btn-block">Get Weather</button> </div></div>
+		<div class="row"><div class="col-md-12 col-sm-6"> <button name="Search" onclick="makeVisible()" class="btn btn-primary btn-block" id="SearchVisibility">Search another city</button> </div></div>
+		<!-- <div class="row"><div class="col-md-12 col-sm-6"> <button name="getForcaste" onclick="parseJson2()" class="btn btn-primary btn-block">Get Forcaste</button> </div></div> -->
+		<!-- </div> -->
+		<br>
+		<h2 id="nointernet"></h2>
+		<div class="board" id="blur-bg" style="visibility: collapse;">
+			<div class="row"><div class="col-md-12"><p id="last_update" style="visibility: collapse;"></p></div>
+			<div class="row"><div class="col-md-4"></div><div class="col-md-1 col-sm-1"><p id="Temperature" style="font-style: bold;"></div><div class="col-md-3 col-sm-2"><h2 id="City"></h2></div><div class="col-md-2 col-sm-2"><img class="img-responsive" id="flag" style="visibility: hidden;"></div><div class="col-md-2 col-sm-1"></div></div>
+
+			<div class="row"><div class="col-md-4 col-sm-2"></div><div class="col-md-4 col-sm-8"></p></div><div class="col-md-4 col-sm-2"></div></div>
+
+			<div class="row"><div class="col-md-4 col-sm-2"></div><div class="col-md-4 col-sm-8"><img id="image" style="visibility: hidden;" class="img-responsive"></img></div><div class="col-md-5 col-sm-2"></div></div>
+
+			<div class="row"><div class="col-md-5 col-sm-2"></div><div class="col-md-4 col-sm-8"><h4 id="Climate"></h4></div><div class="col-md-5 col-sm-2"></div></div>
+			
+			<div class="row"><div class="col-sm-4 col-md-5"></div><div class="col-sm-1 col-md-1"><img id="temp_h" src="Resources/high-temperature.svg" class="img-responsive med-img" style="visibility: hidden;"><p id="htemp"></p></div><div class="col-sm-2 col-md-2"><img id="temp_l" src="Resources/low-temperature.svg" class="img-responsive med-img" style="visibility: hidden;"><p id="ltemp"></p></div><div class="col-sm-4 col-md-6"></div></div>
+			<!-- <hr> -->
+			<div class="row"><div class="col-md-5 col-sm-6"></div><div class="col-md-4 col-sm-4"><h4 id="wind-title" style="visibility: hidden;">Wind</h4></div><div class="col-md-4 col-sm-4"></div></div>
+			<div class="row"><div class="col-md-5 col-sm-2"></div><div class="col-md-4 col-sm-8"><img src="Resources/navigation.svg" class="img-responsive med-img" id="wind-img" style="visibility: hidden;"></div><div class="col-md-2 col-sm-2"></div></div>
+			<div class="row"><div class="col-md-5 col-sm-2"></div><div class="col-md-2 col-sm-8"><p id="wind"></p></div><div class="col-md-4 col-sm-4"></div></div>
+
+			<div class="row"><div class="col-sm-4 col-md-5"></div><div class="col-sm-2 col-md-2"><img id="sunrise" src="Resources/sunny.svg" class="img-responsive med-img" style="visibility: hidden;"><p id="sr"></p></div><div class="col-sm-2 col-md-2"><img id="sunset" src="Resources/moon.svg" class="img-responsive med-img" style="visibility: hidden;"><p id="ss"></p></div><div class="col-sm-4 col-md-6"></div></div>
+
+			<!-- Trend Starts -->
+			<div class="row">
+			<div class="col-md-12"><h3 style="padding: 10px;" id="forecast">Forecast</h3>
+			</div></div>
+
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+				<table align="center">
+					<th><p align="left"><b>Time</b></p></th><th>&ensp;</th><th><p><b>Temperature</b></p></th><th>&ensp;</th><th><p><b>Weather</b></p></th><th>&ensp;</th><th><p><b>Weather Description</b></p></th>
+					<tr><td><p id="date1"></p></td><td>&ensp;</td><td><p id="temp1"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im1"/></td><td>&ensp;</td><td><p id="we1"></p></td></tr>
+					<tr><td><p id="date2"></p></td><td>&ensp;</td><td><p id="temp2"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im2"/></td><td>&ensp;</td><td><p id="we2"></p></td></tr>
+					<tr><td><p id="date3"></p></td><td>&ensp;</td><td><p id="temp3"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im3"/></td><td>&ensp;</td><td><p id="we3"></p></td></tr>
+					<tr><td><p id="date4"></p></td><td>&ensp;</td><td><p id="temp4"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im4"/></td><td>&ensp;</td><td><p id="we4"></p></td></tr>
+					<tr><td><p id="date5"></p></td><td>&ensp;</td><td><p id="temp5"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im5"/></td><td>&ensp;</td><td><p id="we5"></p></td></tr>
+					<tr><td><p id="date6"></p></td><td>&ensp;</td><td><p id="temp6"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im6"/></td><td>&ensp;</td><td><p id="we6"></p></td></tr>
+					<tr><td><p id="date7"></p></td><td>&ensp;</td><td><p id="temp7"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im7"/></td><td>&ensp;</td><td><p id="we7"></p></td></tr>
+					<tr><td><p id="date8"></p></td><td>&ensp;</td><td><p id="temp8"></p></td><td>&ensp;</td><td><img class="img-responsive" id="im8"/></td><td>&ensp;</td><td><p id="we8"></p></td></tr>
+				</table>
+			</div>
+		</div>
+
+
+		</div>
+
+	<!-- </div> -->
+
+	</div>
+</body>
+
+</html>

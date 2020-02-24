@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>outputs</title>
+          <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+    </head>
+    <body >
+
+  <center>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function getParams(){
+                var idx = document.URL.indexOf('?');
+                var params = new Array();
+                if (idx != -1) {
+                    var pairs = document.URL.substring(idx+1,document.URL.length).split('&');
+                    for (var i=0; i<pairs.length; i++){
+                        nameVal = pairs[i].split('=');
+                        params[nameVal[0]] = nameVal[1];
+                    }
+                }
+                return params;
+            }
+            params = getParams();
+
+            contact=localStorage.getItem("lastname");
+            
+            dob=unescape(params["dob"]);
+            address1=unescape(params["address1"]);
+            city=unescape(params["city"]);
+            state=unescape(params["state"]);
+            pincode=unescape(params["pincode"]);
+            description=unescape(params["description"]);
+            var arr = {dob:dob,pincode:pincode,address1:address1,city:city,state:state,description:description};
+            $.ajax({
+            url: 'http://d5ee4a00.ngrok.io/retailer/',
+            type: 'POST',
+            data: JSON.stringify(arr),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            headers: {
+              "auth-token": contact
+            },
+            async: true,
+            success: function(msg) {
+                window.location.href = "home.html";
+                console.log("success");
+            },
+             error: function (jqXHR, exception)
+                   {
+                              var msg = '';
+                                if (jqXHR.status === 0) {
+                                    msg = 'Not connect.\n Verify Network.';
+                                } else if (jqXHR.status == 404) {
+                                    msg = 'Requested page not found. [404]';
+                                } else if (jqXHR.status == 500) {
+                                    msg = 'Entered values must be unique for the user  |  Internal Server Error [500].';
+                                } else if (exception === 'parsererror') {
+                                    msg = 'Requested JSON parse failed.';
+                                } else if (exception === 'timeout') {
+                                    msg = 'Time out error.';
+                                } else if (exception === 'abort') {
+                                    msg = 'Ajax request aborted.';
+                                } else {
+                                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                                }
+                                alert(msg);
+                                window.location.href = "retailerdetails.html";
+                                
+                      }
+              
+                                                            
+        });
+        </script>
+
+        </center>
+    </body>
+</html>

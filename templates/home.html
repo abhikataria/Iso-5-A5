@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <br>
+  <br>
+  <title>FarmFella</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+   <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(93019)</script> 
+
+  <!-- Favicons -->
+  <img src="{{ url_for('static', filename='msc/index/favicon.png') }}" alt="Logo">
+  <img src="{{ url_for('static', filename='msc/index/apple-touch-icon.png') }}" rel="apple-touch-icon" alt="Logo">
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Bootstrap css -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link href="{{ url_for('static', filename='css/index/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+ <!--  <link href="css/index/owl.carousel.min.css" rel="stylesheet">
+  <link href="css/index/owl.theme.default.min.css" rel="stylesheet">
+  <link href="css/index/font-awesome.min.css" rel="stylesheet">
+  <link href="css/index/animate.min.css" rel="stylesheet">
+  <link href="css/index/modal-video.min.css" rel="stylesheet"> -->
+
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/index/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: eStartup
+    Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <header id="header" class="header header-hide">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="/"><img src="{{ url_for('static', filename='msc/index/FarmFella Logo.png') }}" height="80" width="80">&nbsp;&nbsp;<span style="color: green">Farm</span><span style="color: #6fec5d">Fella</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a> -->
+      </div>
+
+      <nav id="nav-menu-container" style="margin-top: 20px; margin-bottom: 20px; height: 20px;" >
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/profile">My Profile</a></li>
+          <li><a href="/retailer">Retailer</a></li>
+          <li><a href="/supplier">Supplier</a></li>
+          <li><a href="/mandi">Live Mandi Price</a></li>
+           <li><a href="/weatherinfo/weather">Weather</a></li>
+          <li><a href="/faq">Faqs</a></li>
+
+          <li><a href="/soil">Crop Price Prediction</a></li>
+
+          <li class="menu-has-children"><a href="">Language</a>
+            <ul>
+              <li><a href="#">Hindi</a></li>
+              <li><a href="#">Urdu</a></li> 
+              <li><a href="#">Odia</a></li>
+              <li><a href="#">Telgu</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero" class="wow fadeIn">
+    <div class="hero-container">
+      <h1>Welcome to FarmFella</h1>
+      <h2>Polished website which can be a farmer's most useful tool!</h2>
+      <img src="{{ url_for('static', filename='msc/index/hero-img.png') }}" alt="Hero Imgs">
+
+      <a href="/profile" class="btn-get-started scrollto">View Profile</a>
+      <a href="/logout" class="btn-get-started scrollto">Logout</a>
+      
+    </div>
+  </section><!-- #hero -->
+
+  <!--==========================
+    Get Started Section
+  ============================-->
+
+  <!--==========================
+    About Us Section
+  ============================-->
+
+  <!--==========================
+    Features Section
+  ============================-->
+
+  <section id="features" class="padd-section text-center wow fadeInUp">
+
+
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Amazing Features.</h2>
+        <p class="separator">Providing All the tools required</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Weather-sun-clouds-rain.svg" alt="img" class="img-fluid">
+            <h4>Climate Anticipation</h4>
+            <p>Display minute by minute climate report.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="https://msg91.com/wp-content/uploads/2018/07/right-lang-1.svg" alt="img" class="img-fluid">
+            <h4>Multi Comunnication Support</h4>
+            <p>Enabling to communicate without any difficulty.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="{{ url_for('static', filename='msc/index/design-tool.svg') }}" alt="img" class="img-fluid">
+            <h4>Easy-Accessible</h4>
+            <p>Light and simple to comprehend, making lives simpler.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="{{ url_for('static', filename='msc/index/chat.png') }}" alt="img" class="img-fluid">
+            <h4>Chatter Bot</h4>
+            <p>Communicate without any disruption in between, with instant messaging.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark unique-color">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+
+    <!-- Collapsible content -->
+  </nav>
+  <!--/.Navbar-->
+
+
+  <!--==========================
+    Screenshots Section
+  ============================-->
+
+  <!--==========================
+    Video Section
+  ============================-->
+
+  
+
+
+
+
+<!-- 
+  <section id="video" class="text-center wow fadeInUp">
+    <div class="overlay">
+     
+    </div>
+  </section> -->
+
+
+<div class="" style="width: 90%;text-align: center;margin-left: 9%;">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 90%;text-align: center;">
+    <!-- Indicators -->
+   
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="{{ url_for('static', filename='msc/index/1.jpeg') }}" alt="Los Angeles" style="width:100%;">
+        </div>
+
+      <div class="item">
+        <img src="{{ url_for('static', filename='msc/index/2.jpeg') }}" alt="Chicago" style="width:100%;">
+       </div>
+    
+      <div class="item">
+        <img src="{{ url_for('static', filename='msc/index/3.jpeg') }}" alt="New York" style="width:100%;">
+        </div>
+         <div class="item">
+        <img src="{{ url_for('static', filename='msc/index/4.jpeg') }}" alt="New York" style="width:100%;">
+        </div>
+         <div class="item">
+        <img src="{{ url_for('static', filename='msc/index/5.jpeg') }}" alt="New York" style="width:100%;">
+        </div>
+  
+    </div>
+   
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+  <!--==========================
+    Team Section
+  ============================-->
+
+
+  <!--==========================
+    Testimonials Section
+  ============================-->
+
+  
+
+              <div class="btm-btm">
+
+                <ul class="list-unstyled carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ul>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+    Pricing Table Section
+  ============================-->
+
+  <!--==========================
+    Blog Section
+  ============================-->
+  <section id="blog" class="padd-section wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+
+        <h2>Latest posts</h2>
+        <p class="separator">Give Yourself some deadline,Be in Headline. </p>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="block-blog text-left">
+            <a href="#"><img src="{{ url_for('static', filename='msc/index/15.jpeg') }}" alt="img"></a>
+            <div class="content-blog">
+              <h4><a href="#">Govt approves changes in PMFBY to make it optional for farmers.</a></h4>
+              <span>19,Feb 2020</span>
+              <a class="pull-right readmore" href="">read more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="block-blog text-left">
+            <a href="#"><img src="{{ url_for('static', filename='msc/index/16.jpg') }}" class="img-responsive" alt="img"></a>
+            <div class="content-blog">
+              <h4><a href="#">Haryana procures record 6 lakh tonnes of mustard.</a></h4>
+              <span>20,Feb 2020</span>
+              <a class="pull-right readmore" href="#">read more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="block-blog text-left">
+            <a href="#"><img src="{{ url_for('static', filename='msc/index/17.jpg') }}" class="img-responsive" alt="img"></a>
+            <div class="content-blog">
+              <h4><a href="#">Smuggling of pulses hits importers and farmers.</a></h4>
+              <span>17, Feb 2020</span>
+              <a class="pull-right readmore" href="#">read more</a>
+            </div>
+          </div>
+        </div>
+
+
+ <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+    Newsletter Section
+  ============================-->
+  <!-- <section id="newsletter" class="newsletter text-center wow fadeInUp">
+    <div class="overlay padd-section">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-6">
+            <form class="form-inline" method="POST" action="#">
+
+              <input type="email" class="form-control " placeholder="Email Adress" name="email">
+              <button type="submit" class="btn btn-default"><i class="fa fa-location-arrow"></i>Subscribe</button>
+
+            </form>
+
+          </div>
+        </div>
+
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+
+
+      </div>
+    </div>
+  </section> -->
+
+  <!--==========================
+    Contact Section
+  ============================-->
+  <section id="contact" class="padd-section wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Contact</h2>
+        <p class="separator">Send Us a Valuable Feedback</p>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 25px;">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-3 col-md-4">
+
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p>RJIT<br>Tekanpur,Gwalior</p>
+            </div>
+
+            <div class="email">
+              <i class="fa fa-envelope"></i>
+              <p>abhishekkataria35@gmail.com</p>
+
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+91 9981061764</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- #contact -->
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#"><span style="color: green">Farm</span><span style="color: #6fec5d">Fella</span></a>
+            <p>If you have any disputes or hints, please fill in the details below, and we will get in touch with you very soon.</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4></h4>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Top Touches</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">Climate Anticipation</a></li>
+              <li><a href="#">Communication Support</a></li>
+              <li><a href="#">Chatter-Bot</a></li>
+              <li><a href="#">SMS Service</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Support</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">faq</a></li>
+              <li><a href="#">Editor help</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights FarmFella. All rights reserved.</p>
+        <div class="credits">
+         
+        </div>
+      </div>
+    </div>
+          <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+  </footer>
+
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+  <script src="{{ url_for('static', filename='js/profile/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/jquery-migrate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/hoverIntent.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/superfish.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/index/modal-video.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/contactform.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/profile/jquery.min.js') }}"></script>
+  <!-- Template Main Javascript File -->
+
+</body>
+</html>

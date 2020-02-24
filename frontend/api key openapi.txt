@@ -1,0 +1,15 @@
+api key -f2acfe2b34ff0515b431677b2ad7a506
+
+link to test-api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=f2acfe2b34ff0515b431677b2ad7a506
+
+
+
+current weather-
+http://api.openweathermap.org/data/2.5/weather?q=uttar%20pradesh,india&APPID=f2acfe2b34ff0515b431677b2ad7a506
+
+
+
+
+
+history weather-
+https://samples.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87.65&appid=f2acfe2b34ff0515b431677b2ad7a506
